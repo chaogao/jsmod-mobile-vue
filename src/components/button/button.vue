@@ -1,0 +1,163 @@
+<template>
+  <a v-bind:style="[customStyle, _style]"
+      @touchstart="isPress = true"
+      @touchend="isPress = false"
+      v-bind:class="buttonClass"
+      v-bind:href="href"
+      @click="_onClick"
+      >
+
+    <span v-if="status == 'loading'" class="jsmod-button-icon">
+      <i v-bind:class="['iconjsmod', 'iconjsmod-jiazai', 'jsmod-loading']"></i>
+    </span>
+
+    <span v-if="status != 'loading'" class="jsmod-button-text"><slot></slot></span>
+    <span else class="jsmod-button-text-loading"><slot name="loading"></slot></span>
+  </a>
+</template>
+
+<script>
+  import Vue from 'vue';
+
+  const BUTTON_STATES = [
+    'default',
+    'loading',
+    'disabeld'
+  ];
+
+  export default {
+    computed: {
+      buttonClass () {
+        let arr = ['jsmod-button'];
+
+        this.inline && arr.push('jsmod-button-inline');
+        this.status == 'disabeld' && arr.push('jsmod-button-disabled');
+        this.border && arr.push('jsmod-button-border');
+        (this.status != 'disabeld' && this.isPress) && arr.push('jsmod-button-pressing');
+
+        return arr;
+      },
+
+      _style () {
+        let obj = {};
+
+        if (this.color) {
+          obj.color = this.color;
+        }
+
+        if (this.backgroundColor) {
+          obj.backgroundColor = this.backgroundColor;
+        }
+
+        if (typeof this.border == 'string') {
+          obj.borderColor = this.border;
+        }
+
+        return obj;
+      }
+    },
+
+    methods: {
+      _onClick (e) {
+        if (this.status != 'loading' && this.status != 'disabeld') {
+          this.$emit('click');
+          this.onClick(e);
+        }
+      }
+    },
+
+    data () {
+      return {
+        isPress: false
+      }
+    },
+
+    props: {
+      status: {
+        type: String,
+        validator (value) {
+          return BUTTON_STATES.indexOf(value) > -1;
+        },
+        default: 'default'
+      },
+
+      backgroundColor: {
+        type: String
+      },
+
+      color: {
+        type: String
+      },
+
+      border: {
+        type: [Boolean, String]
+      },
+
+      inline: {
+        type: Boolean,
+        default: false
+      },
+
+      onClick: {
+        type: Function,
+        default: () => {}
+      },
+
+      href: {
+        type: [String, Object],
+        default: 'javascript:void(0)'
+      },
+
+      customStyle: {
+        type: Object,
+        default: {}
+      }
+    }
+
+  }
+</script>
+
+
+<style lang="stylus">
+  @import "~@/styles/mixin";
+
+  .jsmod-button
+    display: block;
+    padding: 8px 10px;
+    text-align: center;
+    background-color: link-color;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+
+    .jsmod-button-icon
+      vertical-align: middle;
+
+      i
+        font-size: 18px;
+
+    &.jsmod-button-inline
+      display: inline-block;
+
+    &.jsmod-button-disabled
+      color: #bbb!important;
+      background-color: #ddd!important;
+      border-color: #ddd!important;
+
+    &.jsmod-button-border
+      border: 1px solid border-color;
+
+    &.jsmod-button-pressing
+      &:after
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+
+
+
+</style>
