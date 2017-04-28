@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../pages'
 import Dialog from '../pages/dialog'
+import Alert from '../pages/dialog/alert'
 import Button from '../pages/button'
 
 Vue.use(Router);
@@ -27,6 +28,11 @@ let router = new Router({
       path: '/dialog',
       name: 'dialog',
       component: Dialog
+    },
+    {
+      path: '/alert',
+      name: 'alert',
+      component: Alert
     },
     {
       path: '/button',

@@ -11,9 +11,9 @@
     </div>
 
     <div slot="footer">
-      <a href="javascript:void(0);" v-on:click="onFooterClick" class="jsmod-alert-footer">
+      <mod-button  v-on:click="onFooterClick" :customStyle="buttonStyle">
         {{ btn }}
-      </a>
+      </mod-button>
     </div>
   </mod-dialog>
 </template>
@@ -24,13 +24,17 @@
 
   export default {
     props: {
-      width: {
-        type: [String, Number],
-        default: '80%'
-      },
       value: {
         type: Boolean,
         default: false
+      },
+      content: {
+        type: String,
+        default: ''
+      },
+      width: {
+        type: [String, Number],
+        default: '80%'
       },
       useIscroll: {
         type: Boolean,
@@ -44,10 +48,6 @@
         type: String,
         default: '确认'
       },
-      content: {
-        type: String,
-        default: ''
-      },
       onClick: {
         type: Function,
         default: () => {}
@@ -56,7 +56,13 @@
 
     data () {
       return {
-        canShow: false
+        canShow: false,
+        buttonStyle: {
+          background: '#fff',
+          borderRadius: '0px 0px 10px 10px',
+          padding: '10px 0',
+          color: '#108ee9'
+        }
       }
     },
 
@@ -79,8 +85,11 @@
     methods: {
       onFooterClick () {
         let returnValue = this.onClick();
+        let e = new Event('click');
 
-        if (returnValue !== false) {
+        this.$emit('click', e);
+
+        if (returnValue !== false && e.cancelable === false) {
           this.canShow = false;
         }
       },
@@ -91,7 +100,8 @@
     },
 
     components: {
-      'mod-dialog': ModDialog
+      ModDialog,
+      ModButton
     }
   }
 
@@ -109,19 +119,10 @@
 
   .jsmod-alert-content
     background: #fff;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #efefef;
     font-size: 12px;
     text-align: center;
     overflow: hidden;
-
-  .jsmod-alert-footer
-    display: block;
-    background: #fff;
-    text-align: center;
-    border-radius: 0px 0px 10px 10px;
-    padding: 10px 0;
-    color: link-color;
-    text-decoration: none;
 
 </style>

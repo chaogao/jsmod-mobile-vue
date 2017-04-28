@@ -12,7 +12,7 @@
     </span>
 
     <span v-if="status != 'loading'" class="jsmod-button-text"><slot></slot></span>
-    <span else class="jsmod-button-text-loading"><slot name="loading"></slot></span>
+    <span v-else class="jsmod-button-text-loading"><slot name="loading"></slot></span>
   </a>
 </template>
 
@@ -109,8 +109,7 @@
       },
 
       customStyle: {
-        type: Object,
-        default: {}
+        type: Object
       }
     }
 

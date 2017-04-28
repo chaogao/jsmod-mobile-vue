@@ -11,6 +11,14 @@
 
 ## ModDialog
 
+### 何时使用？
+
+`ModDialog` 给开发者最大限度的自由，创建各种弹窗功能，使用场景如下：
+
+* 用 `ModAlert`, `ModConfirm`, `ModToast` 无法实现的功能
+* 需要自由控制弹窗样式，交互逻辑
+* 各种广告弹窗
+
 ### components 调用
 ```html
 <mod-dialog :value="true" >
@@ -56,3 +64,52 @@ this.$jsmod.dialog.show({
 | height         |       |    [String, Number]   |  可以设置百分比（80%）, 也可以设置数值，当为空时会自动根据内容区域计算|
 | backgroundColor|    #fff   |    [String]   |  弹窗的背景色 |
 | soltBackgroundColor|    #fff   |    [String]   |  内容区域的背景色（不包括 header、footer 区域） |
+
+
+
+## ModAlert
+
+
+### 何时使用？
+
+`ModAlert` 实现了 ios 风格确认窗，确认操作时使用即可
+
+### components 调用
+
+```
+<mod-alert v-model="show1"  content="购买成功！"></mod-alert>
+```
+
+### api 调用
+
+```javascript
+this.$jsmod.alert.show({
+  content: 'api 显示的确认窗'
+});
+```
+
+### slots
+
+| name        | description |
+| ----------- |-------------|
+| default     | 内容区域     |
+
+### props
+
+
+| name        | default     |   type      | description |
+| ----------- |-------------|-------------|-------------|
+| value       | false       |    Boolean   |  是否显示弹窗，设置 v-model 时不要设置此值 |
+| content     |             |    String   |  内容区域，可用默认 slot 代替|
+| width       |      80%       |    String   |   可以设置百分比（80%）, 也可以设置数值，当为空时会自动根据内容区域计算|
+| useIscroll  |      true   |    Boolean   |  是否使用 Iscroll 插件，当内容有 input 时建议设置为 false |
+| title       |              |    String   |  Alert 的标题，可以为空 |
+| btn       |        确认      |    String   |  Alert 的按钮文案，可以为空 |
+| onClick    |              |    Function   |  点击确认按钮时的回调函数，返回 false 可以阻止关闭行为 |
+
+### event
+
+
+| name        |      description |
+| ----------- |------------------ |
+| click       | 点击确认按钮时触发       |

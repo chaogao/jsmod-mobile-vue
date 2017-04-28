@@ -11,7 +11,7 @@
       <mod-button v-on:click="onClick(2)" border="#ff5a00" color="#ff5a00" background-color="#fff" :customStyle="customStyle">自定义颜色按钮</mod-button>
 
       <mod-button :href="'http://baidu.com'" :customStyle="customStyle">
-        百度
+        跳转到百度
       </mod-button>
 
       <mod-button :status="'disabeld'" :customStyle="customStyle">禁止</mod-button>
