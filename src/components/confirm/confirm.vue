@@ -143,7 +143,7 @@
 
 
 <style lang="stylus">
-  @import "~@/styles/mixin";
+  @import "../../styles/mixin";
 
   .jsmod-confirm-title
     background: #fff;

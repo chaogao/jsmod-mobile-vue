@@ -58,7 +58,7 @@
       return {
         canShow: false,
         buttonStyle: {
-          background: '#fff',
+          backgroundColor: '#fff',
           borderRadius: '0px 0px 10px 10px',
           padding: '10px 0',
           color: '#108ee9'
@@ -109,7 +109,7 @@
 
 
 <style lang="stylus">
-  @import "~@/styles/mixin";
+  @import "../../styles/mixin";
 
   .jsmod-alert-title
     background: #fff;

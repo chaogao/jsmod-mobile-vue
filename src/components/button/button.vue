@@ -1,5 +1,5 @@
 <template>
-  <a v-bind:style="[customStyle, _style]"
+  <a v-bind:style="[_style, customStyle]"
       @touchstart="isPress = true"
       @touchend="isPress = false"
       v-bind:class="buttonClass"
@@ -54,6 +54,8 @@
 
         if (this.border) {
           obj.borderColor = this.border;
+        } else if (this.customStyle && this.customStyle.backgroundColor) {
+          obj.borderColor = this.customStyle.backgroundColor;
         } else {
           obj.borderColor = this.backgroundColor;
         }
@@ -128,7 +130,7 @@
 
 
 <style lang="stylus">
-  @import "~@/styles/mixin";
+  @import "../../styles/mixin";
 
   .jsmod-button
     display: block;

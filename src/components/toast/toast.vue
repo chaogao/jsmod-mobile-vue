@@ -170,7 +170,7 @@
 
 
 <style lang="stylus">
-  @import "~@/styles/mixin";
+  @import "../../styles/mixin";
 
   .jsmod-totast
     background: rgba(45, 45, 45, 0.9);
