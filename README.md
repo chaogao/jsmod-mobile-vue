@@ -1,21 +1,61 @@
-# jsmod-vue
+## jsmod mobile for vue 中文文档
 
-> jsmod components for vue
+[使用文档](http://mjsmod-vue.tedfe.com/)
+[全部示例](http://mjsmod-vue.tedfe.com/dist)
+[git地址](https://github.com/chaogao/jsmod-mobile-vue)
 
-## Build Setup
+### 介绍
 
-``` bash
-# install dependencies
-npm install
+todo...
 
-# serve with hot reload at localhost:8080
-npm run dev
+### 安装
 
-# build for production with minification
-npm run build
+#### 使用 webpack 构建
 
-# build for production and view the bundle analyzer report
-npm run build --report
+``` node
+npm install jsmod-mobile-vue --save
+
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+```javascript
+import Vue from 'vue'
+import JsmodMobileVue from 'jsmod-mobile-vue'
+
+Vue.use(JsmodMobileVue);
+```
+
+#### 使用 umd
+
+todo...
+
+### 开始使用
+
+> 在 vue 模板中使用
+
+```
+<mod-alert :value="true"  content="购买成功！"></mod-alert>
+```
+
+> 在 script 标签中使用
+
+```javascript
+this.$jsmod.alert.show({
+  content: 'api 显示的确认窗'
+});
+```
+
+
+### 本地开发
+
+```
+git clone https://github.com/chaogao/jsmod-mobile-vue.git
+
+npm install
+
+npm run dev # 运行所有示例
+npm run docs # 本地运行文档
+```
+
+### 其他
+
+todo ...
