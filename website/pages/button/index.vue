@@ -2,8 +2,9 @@
   <layout title="Button">
     <div class="button-wrap">
       <mod-button v-on:click="onClick(1)" :customStyle="customStyle">按钮</mod-button>
+      <mod-button class="custom-button" :customStyle="customStyle">自定义类名</mod-button>
 
-      <mod-button v-on:click="getApi()" :status="btnStatus" :customStyle="customStyle">
+      <mod-button v-on:click="getApi()" :status="btnStatus" :customStyle="customStyle" :border="true">
         获取API
         <span slot="loading">加载中</span>
       </mod-button>
@@ -71,5 +72,9 @@
 <style lang="stylus">
   .button-wrap
     padding: 10px;
+
+  .custom-button
+    border-radius: 0!important;
+    background: #ff5a00!important;
 
 </style>

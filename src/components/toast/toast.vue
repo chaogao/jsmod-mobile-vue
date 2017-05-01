@@ -46,8 +46,7 @@
   export default {
     props: {
       width: {
-        type: [String, Number],
-        default: 100
+        type: [String, Number]
       },
       value: {
         type: Boolean,
@@ -93,7 +92,7 @@
       let timeout = this._timeout;
 
       if (timeout > 0) {
-        setTimeout(() => {
+        this._timer = setTimeout(() => {
           this.hide();
         }, timeout);
       }
@@ -130,11 +129,28 @@
         this.canShow = val;
       },
 
-      canShow () {
+      timeout (val) {
+        this._timer && clearTimeout(this._timer);
+
+        this._timer = setTimeout(() => {
+          this.hide();
+        }, this.timeout);
+      },
+
+      canShow (val) {
         this.$emit('input', this.canShow);
 
         if (this.canShow == false) {
+          this.$emit('hide');
           this.onHide();
+        }
+
+        if (val === true && this._timeout > 0) {
+          this._timer && clearTimeout(this._timer);
+
+          this._timer = setTimeout(() => {
+            this.hide();
+          }, this._timeout);
         }
       }
     },
@@ -170,7 +186,7 @@
         font-size: 24px;
 
     .jsmod-toast-content
-      font-size: 14px;
+      font-size: 13px;
       text-align: center;
 
 </style>

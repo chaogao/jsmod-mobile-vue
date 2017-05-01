@@ -107,9 +107,103 @@ this.$jsmod.alert.show({
 | btn       |        确认      |    String   |  Alert 的按钮文案，可以为空 |
 | onClick    |              |    Function   |  点击确认按钮时的回调函数，返回 false 可以阻止关闭行为 |
 
-### event
-
+### events
 
 | name        |      description |
 | ----------- |------------------ |
-| click       | 点击确认按钮时触发       |
+| click       | 点击确认按钮时触发   |
+
+
+
+
+## ModConfirm
+
+### 何时使用？
+
+`ModConfirm` 实现了 ios 风格询问窗，删除，提交等询问功能时使用
+
+### components 调用
+
+```
+<mod-confrim v-model="show1"  content="确认购买吗？"></mod-confrim>
+```
+
+### api 调用
+
+```javascript
+this.$jsmod.confirm.show({
+  content: 'api 显示的确认窗'
+})
+```
+
+### slots
+
+| name        | description |
+| ----------- |-------------|
+| default     | 内容区域     |
+
+### props
+
+| name        | default     |   type      | description |
+| ----------- |-------------|-------------|-------------|
+| value       | false       |    Boolean   |  是否显示弹窗，设置 v-model 时不要设置此值 |
+| content     |             |    String   |  内容区域，可用默认 slot 代替|
+| width       |      80%       |    String   |   可以设置百分比（80%）, 也可以设置数值，当为空时会自动根据内容区域计算|
+| useIscroll  |      true   |    Boolean   |  是否使用 Iscroll 插件，当内容有 input 时建议设置为 false |
+| title       |              |    String   |  Confirm 的标题，可以为空 |
+| btnOk       |      确认      |    String   |  Confirm 的确认按钮文案 |
+| btnNo       |      确认      |    String   |  Confirm 的取消按钮文案 |
+| onClick    |              |    Function   |  点击确认，取消按钮时的回调函数，返回 false 可以阻止关闭行为，传入参数 e.type 标识点击哪个按钮 |
+
+### events
+
+| name        |      description |
+| ----------- |------------------ |
+| click       | 点击确认按钮时触发，传入参数 e.type 标识点击哪个按钮  |
+
+
+## ModToast
+
+### 何时使用
+
+作为应用的轻提示时调用，toast 分别有几种默认状态供开发者选择，通常使用 api 方式调用，而不是 components
+
+### components 调用
+
+```
+<mod-toast v-model="show1" content="默认样式弹窗"></mod-toast>
+```
+
+### api 调用
+
+```javascript
+this.$jsmod.toast.show({
+  content: 'api 显示的确认窗'
+})
+```
+
+
+### props
+
+| name        | default     |   type      | description |
+| ----------- |-------------|-------------|-------------|
+| value       | false       |    Boolean   |  是否显示弹窗，设置 v-model 时不要设置此值 |
+| type     |    default     |    String   |  toast 种类，目前可选择值：['default', 'error', 'success', 'loading'] 除 loading 其余类型会在 1.5s 后自动关闭 toast|
+| content  |         |    String   |  设置提示内容，会替换默认值 |
+| icon       |          |    String   | 设置ICON，会替换默认值 |
+| timeout    |      |    Number   | 设置显示后自动隐藏的时间  |
+| onHide    |      |    Function   | 隐藏时的回调  |
+
+
+<p class="tip">
+  1. timeout 设置为 0 时不会自动隐藏。 <br/>
+  2. toast 会监听 timeout 值得改变，改变后会进入等待隐藏。<br/>
+  3. api 调用时直接改变实例的设置值即可。<br/>
+</p>
+
+
+### events
+
+| name        |      description |
+| ----------- |------------------ |
+| hide       | 隐藏时触发  |

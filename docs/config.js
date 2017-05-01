@@ -9,12 +9,16 @@ docute.init({
       },
 
       {
-        title: '组件',
+        title: 'API',
         type: 'dropdown',
         items: [
           {
             title: '弹出层组',
             path: '/zh/dialog/'
+          },
+          {
+            title: '操作控件组',
+            path: '/zh/functions/'
           },
         ]
       }

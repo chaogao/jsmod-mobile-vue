@@ -12,12 +12,12 @@
 
     <div slot="footer">
       <div class="jsmod-confirm-footer">
-        <a v-on:click="_onBtnNo" class="jsmod-confirm-footer-btn-item" href="javascript:void(0)">
+        <mod-button v-on:click="_onBtnNo" :customStyle="buttonNoStyle">
           {{ btnNo }}
-        </a>
-        <a v-on:click="_onBtnOk" class="jsmod-confirm-footer-btn-item" href="javascript:void(0)">
+        </mod-button>
+        <mod-button v-on:click="_onBtnOk" :customStyle="buttonOkStyle">
           {{ btnOk }}
-        </a>
+        </mod-button>
       </div>
     </div>
   </mod-dialog>
@@ -25,16 +25,17 @@
 
 <script>
   import { ModDialog } from '../dialog';
+  import { ModButton } from '../button';
 
   export default {
     props: {
-      width: {
-        type: [String, Number],
-        default: '80%'
-      },
       value: {
         type: Boolean,
         default: false
+      },
+      width: {
+        type: [String, Number],
+        default: '80%'
       },
       useIscroll: {
         type: Boolean,
@@ -56,11 +57,7 @@
         type: String,
         default: ''
       },
-      onBtnOk: {
-        type: Function,
-        default: () => {}
-      },
-      onBtnNo: {
+      onClick: {
         type: Function,
         default: () => {}
       }
@@ -68,7 +65,22 @@
 
     data () {
       return {
-        canShow: false
+        canShow: false,
+        buttonNoStyle: {
+          flex: 1,
+          padding: '10px 0',
+          color: '#999',
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          borderRight: '1px solid #efefef',
+          borderRadius: '0'
+        },
+        buttonOkStyle: {
+          flex: 1,
+          padding: '10px 0',
+          color: '#108ee9',
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          borderRadius: '0'
+        },
       }
     },
 
@@ -90,7 +102,13 @@
 
     methods: {
       _onBtnOk () {
-        let returnValue = this.onBtnOk();
+        let returnValue = this.onClick({
+          type: true
+        });
+
+        this.$emit('click', {
+          type: true
+        });
 
         if (returnValue !== false) {
           this.canShow = false;
@@ -98,7 +116,13 @@
       },
 
       _onBtnNo () {
-        let returnValue = this.onBtnNo();
+        let returnValue = this.onClick({
+          type: false
+        });
+
+        this.$emit('click', {
+          type: false
+        });
 
         if (returnValue !== false) {
           this.canShow = false;
@@ -129,7 +153,7 @@
 
   .jsmod-confirm-content
     background: #fff;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     border-bottom: 1px solid border-color;
     font-size: 12px;
     text-align: center;

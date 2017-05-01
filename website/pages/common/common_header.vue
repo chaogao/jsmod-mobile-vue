@@ -6,8 +6,8 @@
 
     <span class="title">{{ title }}</span>
 
-    <a  v-on:click="goHome" class="action-home">
-      <i class="fa fa-home" aria-hidden="true"></i>
+    <a v-on:click="goHome" class="action-home">
+      <i class="iconjsmod iconjsmod-shouye" aria-hidden="true"></i>
     </a>
   </div>
 </template>

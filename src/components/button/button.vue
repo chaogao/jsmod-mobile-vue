@@ -32,8 +32,11 @@
 
         this.inline && arr.push('jsmod-button-inline');
         this.status == 'disabeld' && arr.push('jsmod-button-disabled');
-        this.border && arr.push('jsmod-button-border');
+        // 都有 border
+        arr.push('jsmod-button-border');
         (this.status != 'disabeld' && this.isPress) && arr.push('jsmod-button-pressing');
+
+        this.class && arr.push(this.class);
 
         return arr;
       },
@@ -49,8 +52,10 @@
           obj.backgroundColor = this.backgroundColor;
         }
 
-        if (typeof this.border == 'string') {
+        if (this.border) {
           obj.borderColor = this.border;
+        } else {
+          obj.borderColor = this.backgroundColor;
         }
 
         return obj;
@@ -82,7 +87,8 @@
       },
 
       backgroundColor: {
-        type: String
+        type: String,
+        default: '#108ee9'
       },
 
       color: {
@@ -110,6 +116,10 @@
 
       customStyle: {
         type: Object
+      },
+
+      class: {
+        type: String
       }
     }
 

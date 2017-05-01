@@ -5,7 +5,11 @@
       <mod-button v-on:click="show1 = !show1" >显示</mod-button>
 
       <mod-alert v-model="show2" v-on:click="onClick" content="购买成功！"></mod-alert>
-      <mod-button v-on:click="show2 = !show2" >监听事件</mod-button>
+      <mod-button v-on:click="show2 = !show2" >处理回调</mod-button>
+
+      <mod-alert v-model="show3" title="提示" btn="好贵！" content="购买成功！"></mod-alert>
+      <mod-button v-on:click="show3 = !show3" >自定义文案</mod-button>
+
 
       <mod-button v-on:click="showAlert" >API调用</mod-button>
 
@@ -22,12 +26,6 @@
         show1: false,
         show2: false,
         show3: false,
-        show4: false,
-        show5: false,
-        show6: false,
-        list: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'k', 'm', 'o'],
-        list2: ['一条数据'],
-        list3: ['一条数据']
       }
     },
 

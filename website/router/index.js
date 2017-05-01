@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Index from '../pages'
 import Dialog from '../pages/dialog'
 import Alert from '../pages/dialog/alert'
+import Confirm from '../pages/dialog/confirm'
+import Toast from '../pages/dialog/toast'
 import Button from '../pages/button'
 
 Vue.use(Router);
@@ -33,6 +35,16 @@ let router = new Router({
       path: '/alert',
       name: 'alert',
       component: Alert
+    },
+    {
+      path: '/confirm',
+      name: 'confirm',
+      component: Confirm
+    },
+    {
+      path: '/toast',
+      name: 'toast',
+      component: Toast
     },
     {
       path: '/button',
