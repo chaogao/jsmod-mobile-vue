@@ -6,11 +6,11 @@ import Alert from '../pages/dialog/alert'
 import Confirm from '../pages/dialog/confirm'
 import Toast from '../pages/dialog/toast'
 import Button from '../pages/button'
+import config from '../../config'
 
 Vue.use(Router);
 
 let router = new Router({
-  mode: 'history',
 
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {

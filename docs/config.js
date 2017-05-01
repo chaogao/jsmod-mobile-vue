@@ -1,5 +1,25 @@
+var LANG = {
+  title: 'lang',
+
+  type: 'dropdown',
+
+  items: [
+    {
+      title: '中文',
+      path: '/zh/'
+    },
+    {
+      title: 'en',
+      path: '/en/'
+    },
+  ]
+}
+
+
 docute.init({
   home: '/zh/README.md',
+
+  url: '/docs',
 
   nav: {
     default: [
@@ -21,7 +41,18 @@ docute.init({
             path: '/zh/functions/'
           },
         ]
-      }
+      },
+
+      LANG
     ],
+
+    en: [
+      {
+        title: 'home',
+        path: '/en/'
+      },
+
+      LANG
+    ]
   }
 });
