@@ -1,9 +1,8 @@
 {
   "name": "jsmod-mobile-vue",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "jsmod components for vue",
   "author": "gaochao04@gmail.com",
-  "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
