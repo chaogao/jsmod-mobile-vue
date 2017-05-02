@@ -4,6 +4,12 @@
 [全部示例](http://mjsmod-vue.tedfe.com/dist)
 [git地址](https://github.com/chaogao/jsmod-mobile-vue)
 
+
+![Alt text](http://oajua4pqj.qnssl.com/o_1bf2kjjp61c175uvndm1jc95fn7.png)
+
+> 扫描查看全部示例
+
+
 ### 介绍
 
 todo...

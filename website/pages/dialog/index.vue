@@ -1,5 +1,5 @@
 <template>
-  <layout title="Dialog">
+  <layout title="Dialog" source="dialog/index.vue">
     <div class="button-wrap">
 
       <mod-dialog v-model="show1" >

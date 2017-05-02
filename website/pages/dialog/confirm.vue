@@ -1,5 +1,5 @@
 <template>
-  <layout title="Confirm">
+  <layout title="Confirm" source="dialog/confirm.vue">
     <div class="button-wrap">
       <mod-confirm v-model="show1"  content="确认付款？"></mod-confirm>
       <mod-button v-on:click="show1 = !show1" >显示</mod-button>

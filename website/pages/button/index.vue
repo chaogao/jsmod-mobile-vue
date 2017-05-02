@@ -1,5 +1,5 @@
 <template>
-  <layout title="Button">
+  <layout title="Button" source="button/index.vue">
     <div class="button-wrap">
       <mod-button v-on:click="onClick(1)" :customStyle="customStyle">按钮</mod-button>
       <mod-button class="custom-button" :customStyle="customStyle">自定义类名</mod-button>

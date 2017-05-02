@@ -1,5 +1,5 @@
 <template>
-  <layout title="Toast">
+  <layout title="Toast" source="dialog/toast.vue">
     <div class="button-wrap">
       <mod-toast v-model="show1" content="默认样式弹窗"></mod-toast>
       <mod-toast v-model="show2" type="loading"></mod-toast>

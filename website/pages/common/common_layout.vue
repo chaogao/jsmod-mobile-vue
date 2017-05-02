@@ -4,6 +4,13 @@
       <span v-if="rightBtn" v-html="rightBtn"></span>
 		</common-header>
 
+    <div v-if="source" class="common-footer-source">
+      <a :href="'https://github.com/chaogao/jsmod-mobile-vue/tree/master/website/pages/' + source ">
+        <span>本例源码</span>
+        <i class="iconjsmod iconjsmod-xiangyou1"></i>
+      </a>
+    </div>
+
 		<slot v-if="isShowNotFound" name="header">
 			<common-header v-bind:title="'找不到页面'"></common-header>
 		</slot>
@@ -13,7 +20,7 @@
 		</div>
 
 		<slot v-if="!isShowNotFound" name="footer">
-			<common-footer v-if="!hideFooter" v-bind:footerTab="footerTab"></common-footer>
+			<common-footer :source="source" v-if="!hideFooter" v-bind:footerTab="footerTab"></common-footer>
 		</slot>
 	</div>
 </template>
@@ -30,7 +37,7 @@ export default {
 		}
 	},
 
-	props: ['title', 'hideFooter', 'containerClass', 'isShowNotFound', 'footerTab', 'hideBack', 'rightBtn', 'onRigthBtn', 'OrderTip', 'isService', 'isTitle'],
+	props: ['title', 'hideFooter', 'containerClass', 'isShowNotFound', 'footerTab', 'hideBack', 'rightBtn', 'onRigthBtn', 'OrderTip', 'isService', 'isTitle', 'source'],
 
 	components: {
 		CommonHeader,
@@ -77,4 +84,20 @@ export default {
 			opacity: 0;
 		}
 	}
+
+
+  .common-footer-source {
+    a {
+      background: #efefef;
+      color: #999;
+      text-align: left;
+      display: block;
+      padding: 10px;
+    }
+
+    i {
+      float: right;
+      margin-top: 3px;
+    }
+  }
 </style>

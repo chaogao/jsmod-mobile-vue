@@ -1,5 +1,5 @@
 <template>
-  <layout title="Alert">
+  <layout title="Alert" source="dialog/alert.vue">
     <div class="button-wrap">
       <mod-alert v-model="show1"  content="购买成功！"></mod-alert>
       <mod-button v-on:click="show1 = !show1" >显示</mod-button>
