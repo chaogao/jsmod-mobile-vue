@@ -171,7 +171,7 @@
         if (this.width && typeof this.width == 'string' && /%$/.test(this.width)
           && !isNaN(parseInt(this.width))) {
 
-          return (window.outerWidth * parseInt(this.width) / 100);
+          return (window.innerWidth * parseInt(this.width) / 100);
         }
 
         return undefined;
@@ -185,7 +185,7 @@
         if (this.height && typeof this.height == 'string' && /%$/.test(this.height)
           && !isNaN(parseInt(this.height))) {
 
-          return (window.outerHeight * parseInt(this.height) / 100);
+          return (window.innerHeight * parseInt(this.height) / 100);
         }
 
         return undefined;
