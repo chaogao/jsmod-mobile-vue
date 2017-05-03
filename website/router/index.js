@@ -11,7 +11,6 @@ import config from '../../config'
 Vue.use(Router);
 
 let router = new Router({
-
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition

@@ -39,3 +39,10 @@
 | name        |    description |
 | ----------- |------------------ |
 | click       | 点击按钮时触发 |
+
+
+### 示例
+
+[原始链接](http://mjsmod-vue.tedfe.com/dist/#/button)
+
+<iframe width="375" height="667" src="http://mjsmod-vue.tedfe.com/dist/?iframe=1#/button"></iframe>

@@ -1,10 +1,10 @@
 <template>
 	<div id="common-layout">
-		<common-header v-bind:onRigthBtn="onRigthBtn" v-if="title" v-bind:hideBack="hideBack" v-bind:title="title" v-bind:OrderTip="OrderTip" v-bind:isService="isService" v-bind:isTitle="isTitle">
+		<common-header v-bind:onRigthBtn="onRigthBtn" v-if="showHeader" v-bind:hideBack="hideBack" v-bind:title="title" v-bind:OrderTip="OrderTip" v-bind:isService="isService" v-bind:isTitle="isTitle">
       <span v-if="rightBtn" v-html="rightBtn"></span>
 		</common-header>
 
-    <div v-if="source" class="common-footer-source">
+    <div v-if="showSource" class="common-footer-source">
       <a :href="'https://github.com/chaogao/jsmod-mobile-vue/tree/master/website/pages/' + source ">
         <span>本例源码</span>
         <i class="iconjsmod iconjsmod-xiangyou1"></i>
@@ -38,6 +38,20 @@ export default {
 	},
 
 	props: ['title', 'hideFooter', 'containerClass', 'isShowNotFound', 'footerTab', 'hideBack', 'rightBtn', 'onRigthBtn', 'OrderTip', 'isService', 'isTitle', 'source'],
+
+  computed: {
+    showHeader () {
+      let inIframe = window.location.href.indexOf('iframe') > 0;
+
+      return !inIframe;
+    },
+    
+    showSource () {
+      let inIframe = window.location.href.indexOf('iframe') > 0;
+
+      return !inIframe && this.source;
+    }
+  },
 
 	components: {
 		CommonHeader,

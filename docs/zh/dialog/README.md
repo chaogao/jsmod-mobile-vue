@@ -66,6 +66,12 @@ this.$jsmod.dialog.show({
 | soltBackgroundColor|    #fff   |    [String]   |  内容区域的背景色（不包括 header、footer 区域） |
 
 
+### 示例
+
+[原始链接](http://mjsmod-vue.tedfe.com/dist/#/dialog)
+
+<iframe width="375" height="667" src="http://mjsmod-vue.tedfe.com/dist/?iframe=1#/dialog"></iframe>
+
 
 ## ModAlert
 
@@ -114,6 +120,11 @@ this.$jsmod.alert.show({
 | click       | 点击确认按钮时触发   |
 
 
+### 示例
+
+[原始链接](http://mjsmod-vue.tedfe.com/dist/#/alert)
+
+<iframe width="375" height="667" src="http://mjsmod-vue.tedfe.com/dist/?iframe=1#/alert"></iframe>
 
 
 ## ModConfirm
@@ -162,6 +173,13 @@ this.$jsmod.confirm.show({
 | click       | 点击确认按钮时触发，传入参数 e.type 标识点击哪个按钮  |
 
 
+### 示例
+
+[原始链接](http://mjsmod-vue.tedfe.com/dist/#/confirm)
+
+<iframe width="375" height="667" src="http://mjsmod-vue.tedfe.com/dist/?iframe=1#/confirm"></iframe>
+
+
 ## ModToast
 
 ### 何时使用
@@ -207,3 +225,10 @@ this.$jsmod.toast.show({
 | name        |      description |
 | ----------- |------------------ |
 | hide       | 隐藏时触发  |
+
+
+### 示例
+
+[原始链接](http://mjsmod-vue.tedfe.com/dist/#/toast)
+
+<iframe width="375" height="667" src="http://mjsmod-vue.tedfe.com/dist/?iframe=1#/toast"></iframe>
