@@ -23,7 +23,7 @@ module.exports = {
   },
   npm: {
     env: {
-      NODE_ENV: '"development"'
+      NODE_ENV: '"npm"'
     },
     assetsRoot: path.resolve(__dirname, '../lib'),
     assetsSubDirectory: '',
