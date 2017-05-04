@@ -1,15 +1,20 @@
 {
   "name": "jsmod-mobile-vue",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "jsmod components for vue",
   "author": "gaochao04@gmail.com",
   "main": "/src/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "npm": "node build/build-npm.js",
     "lint": "eslint --ext .js,.vue src",
     "docs": "docute ./docs --port 8087"
   },
+  "files": [
+    "lib",
+    "src"
+  ],
   "dependencies": {
     "iscroll": "^5.2.0",
     "less": "^2.7.2",
