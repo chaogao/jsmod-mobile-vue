@@ -3,6 +3,8 @@
     <div class="jsmod-carousel-swiper" :style="{height: calcHeight}">
       <slot></slot>
     </div>
+
+    <slot name="ext"></slot>
   </div>
 </template>
 
@@ -15,6 +17,9 @@
       height: {
         type: Number,
         default: 200
+      },
+      ratio: {
+        type: Number
       },
       direction: {
         type: String,
@@ -44,6 +49,10 @@
         type: Number,
         default: 0
       },
+      preventScrollY: {
+        type: Boolean,
+        default: true
+      },
       value: {
         type: [Number, String],
         default: 0
@@ -56,9 +65,17 @@
       });
 
       this.childrenLength = this.$children.length;
+
+      this.getOffsetWidth();
+      this.onEvents();
+
       this.$watch('childrenLength', () => {
         this.createSwiper(this.currentInner);
       });
+    },
+
+    destroyed () {
+      this.offEvents();
     },
 
     created () {
@@ -73,11 +90,28 @@
     data () {
       return {
         currentInner: 0,
-        childrenLength: 0
+        childrenLength: 0,
+        offsetWidth: 0
       }
     },
 
     methods: {
+      onResize () {
+        this.getOffsetWidth();
+      },
+
+      offEvents () {
+        window.removeEventListener('resize', this.onResize);
+      },
+
+      onEvents () {
+        window.addEventListener('resize', this.onResize);
+      },
+
+      getOffsetWidth () {
+        this.offsetWidth = this.$el.offsetWidth;
+      },
+
       pre () {
         this.swiper && this.swiper.pre();
       },
@@ -88,6 +122,7 @@
 
       createSwiper (idx) {
         let self = this;
+
         this.swiper && this.swiper.destroy()
         this.swiper = new Swiper({
           container: this.$el,
@@ -96,7 +131,8 @@
           interval: this.interval,
           threshold: this.threshold,
           duration: this.duration,
-          height: this.calcHeight
+          height: this.calcHeight,
+          preventScrollY: this.preventScrollY
         }).on('swiped', (prev, index) => {
           self.currentInner = index;
           self.$emit('swiped', {
@@ -131,7 +167,19 @@
 
     computed: {
       calcHeight () {
-        return this.height + 'px'
+        let height = 'auto';
+
+        if (typeof this.height == 'number') {
+          height = this.height + 'px';
+        } else if (this.height != 'auto') {
+          height = this.height;
+        }
+
+        if (this.ratio && this.offsetWidth) {
+          height = (this.offsetWidth * this.ratio) + 'px';
+        }
+
+        return height;
       },
     },
 
@@ -141,8 +189,13 @@
 
 
 <style lang="stylus">
-  .jsmod-carousel-swiper
+
+  .jsmod-carousel
     position: relative;
-    overflow: hidden;
+
+    .jsmod-carousel-swiper
+      position: relative;
+      overflow: hidden;
+
 
 </style>

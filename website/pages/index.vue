@@ -19,12 +19,21 @@
       </div>
     </div>
 
+    <div class="components-group">
+      <div class="components-title">展示控件组</div>
+
+      <div class="components-links">
+        <router-link to="image">ModImage</router-link>
+      </div>
+    </div>
+
 
     <div class="components-group">
       <div class="components-title">滑动控件组</div>
 
       <div class="components-links">
         <router-link to="carousel">ModCarousel</router-link>
+        <router-link to="banner">ModBanner</router-link>
       </div>
     </div>
   </layout>
@@ -45,13 +54,13 @@
 
   .components-group
     padding: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     .components-title
       font-size: 16px;
       line-height: 24px;
       border-bottom: 1px solid main-color;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
 
     .components-links
       padding: 5px;
@@ -59,7 +68,7 @@
       a
         display: inline-block;
         font-size: 14px;
-        margin: 0 10px 10px 0;
+        margin: 0 5px 5px 0;
 
   .components-view
     margin-bottom: 15px;

@@ -12,8 +12,10 @@ import { ModButton } from './components/button';
 
 import { ModCarousel } from './components/carousel';
 import { ModCarouselItem } from './components/carousel';
+import { ModBanner } from './components/banner';
 
 import { ModImage } from './components/image';
+
 
 import './styles/utils.styl';
 import './styles/transition.styl';
@@ -27,6 +29,7 @@ const Components = {
   ModButton,
   ModCarousel,
   ModCarouselItem,
+  ModBanner,
   ModImage
 }
 

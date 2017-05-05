@@ -7,6 +7,7 @@ import Confirm from '../pages/dialog/confirm'
 import Toast from '../pages/dialog/toast'
 import Button from '../pages/button'
 import Carousel from '../pages/carousel'
+import Banner from '../pages/carousel/banner'
 import Image from '../pages/image'
 
 import config from '../../config'
@@ -57,6 +58,11 @@ let router = new Router({
       path: '/carousel',
       name: 'carousel',
       component: Carousel
+    },
+    {
+      path: '/banner',
+      name: 'banner',
+      component: Banner
     },
     {
       path: '/image',

@@ -1,9 +1,11 @@
 <template>
   <layout title="Image" source="image/index.vue">
     <div class="components-view">
-      <div class="view-title">基础实例，设置高度比例</div>
+      <div class="view-title">基础实例，设置高度比例，自定义内容</div>
 
-      <mod-image class="image-item"  :ratio="0.5" src="https://oajua4pqj.qnssl.com/o_1bfbdh2181rcakt21u8uhvg1299r.jpeg" />
+      <mod-image class="image-item"  :ratio="0.5" src="https://oajua4pqj.qnssl.com/o_1bfbdh2181rcakt21u8uhvg1299r.jpeg">
+        <div class="bottom-tip">君の名は - 星海城</div>
+      </mod-image>
     </div>
 
     <div class="components-view">
@@ -17,9 +19,28 @@
     </div>
 
     <div class="components-view">
+      <div class="view-title">手动加载图片资源</div>
+
+      <mod-image v-on:loaded="onLoaded" :auto="auto" class="image-item"  :ratio="0.5" src="https://oajua4pqj.qnssl.com/o_1bfbrlmul10k1f946ds2jjgh6c.jpeg"></mod-image>
+
+      <div class="view-actions">
+        <mod-button :inline="true" v-on:click="auto = true">加载图片</mod-button>
+      </div>
+    </div>
+
+    <div class="components-view">
       <p class="view-title">加载失败，并开启点击重试</p>
 
       <mod-image class="image-item" :clickReload="true" :ratio="0.5" src="https://oajua4pqj.qnssl.com/o_1be2df70gghlnsc19u21rpn1ncb.jpeg" />
+    </div>
+
+
+    <div class="components-view">
+      <p class="view-title">加载失败，自定义错误文案</p>
+
+      <mod-image class="image-item"  :ratio="0.3" src="https://oajua4pqj.qnssl.com/o_1be2df70gghlnsc19u21rpn1ncb.jpeg">
+        <div class="custom-error" slot="error">😔加载失败</div>
+      </mod-image>
     </div>
 
 
@@ -52,12 +73,20 @@
       return {
         img: 1,
         ratio: 0.5,
-        scale: 'cover'
+        scale: 'cover',
+        auto: false
       }
     },
     methods: {
       changeImage () {
         this.img = !this.img;
+      },
+
+      onLoaded () {
+        this.$jsmod.toast.show({
+          type: 'success',
+          content: '图片加载成功'
+        });
       }
     },
     computed: {
@@ -71,6 +100,16 @@
 <style lang="stylus">
   @import "~website/assets/mixin"
 
+  .bottom-tip
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+
   .image-line
     display: flex;
 
@@ -78,5 +117,10 @@
       flex: 1 1 auto;
       width: 0;
       background: #efefef;
+
+  .custom-error
+    text-align: center;
+    padding-top: 30px;
+    color: #ff5a00;
 
 </style>

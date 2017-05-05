@@ -96,7 +96,7 @@
 
     mounted () {
       this.getOffsetWidth();
-      this.loadImage();
+      this.auto && this.loadImage();
       this.onEvents();
     },
 
@@ -147,7 +147,7 @@
         this.isLoading = 0;
         this.isLoaded = 1;
         this.setImageScale();
-
+        this.$emit('loaded');
       },
 
       setImageScale () {
@@ -187,6 +187,16 @@
 
       scale () {
         this.isLoaded && this.setImageScale();
+      },
+
+      src () {
+        this.auto && this.loadImage();
+      },
+
+      auto () {
+        if (this.auto) {
+          this.loadImage();
+        }
       }
     },
 

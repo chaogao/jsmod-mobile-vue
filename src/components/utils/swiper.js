@@ -14,7 +14,8 @@ class Swiper {
       loop: false,
       interval: 3000,
       height: 'auto',
-      minMovingDistance: 0
+      minMovingDistance: 0,
+      preventScrollY: false
     }
     this._options = objectAssign(this._default, options)
     this._options.height = this._options.height.replace('px', '')
@@ -158,6 +159,9 @@ class Swiper {
       let noScrollerY = Math.abs(distanceX) > Math.abs(distanceY)
       if (me._options.direction === 'horizontal' && noScrollerY) {
         distance = distanceX
+      }
+      if (me._options.direction == 'vertical' && me._options.preventScrollY) {
+        noScrollerY = true;
       }
       if (((me._options.minMovingDistance && Math.abs(distance) >= me._options.minMovingDistance) || !me._options.minMovingDistance) && noScrollerY) {
         me._setTransform(distance)
