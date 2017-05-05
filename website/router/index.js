@@ -6,6 +6,9 @@ import Alert from '../pages/dialog/alert'
 import Confirm from '../pages/dialog/confirm'
 import Toast from '../pages/dialog/toast'
 import Button from '../pages/button'
+import Carousel from '../pages/carousel'
+import Image from '../pages/image'
+
 import config from '../../config'
 
 Vue.use(Router);
@@ -49,6 +52,16 @@ let router = new Router({
       path: '/button',
       name: 'button',
       component: Button
+    },
+    {
+      path: '/carousel',
+      name: 'carousel',
+      component: Carousel
+    },
+    {
+      path: '/image',
+      name: 'image',
+      component: Image
     }
   ]
 });

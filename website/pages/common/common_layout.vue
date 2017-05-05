@@ -45,7 +45,7 @@ export default {
 
       return !inIframe;
     },
-    
+
     showSource () {
       let inIframe = window.location.href.indexOf('iframe') > 0;
 
@@ -101,6 +101,8 @@ export default {
 
 
   .common-footer-source {
+    margin-bottom: 5px;
+
     a {
       background: #efefef;
       color: #999;

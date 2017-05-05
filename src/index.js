@@ -2,11 +2,19 @@ import Dialog from './components/dialog';
 import Alert from './components/alert';
 import Confirm from './components/confirm';
 import Toast from './components/toast';
+
 import { ModDialog } from './components/dialog';
 import { ModAlert } from './components/alert';
 import { ModConfirm } from './components/confirm';
 import { ModToast } from './components/toast';
+
 import { ModButton } from './components/button';
+
+import { ModCarousel } from './components/carousel';
+import { ModCarouselItem } from './components/carousel';
+
+import { ModImage } from './components/image';
+
 import './styles/utils.styl';
 import './styles/transition.styl';
 import './styles/iconfont/iconfont.css'
@@ -16,7 +24,10 @@ const Components = {
   ModAlert,
   ModConfirm,
   ModToast,
-  ModButton
+  ModButton,
+  ModCarousel,
+  ModCarouselItem,
+  ModImage
 }
 
 const install = (Vue, options) => {

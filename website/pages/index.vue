@@ -18,6 +18,15 @@
         <router-link to="button">ModButton</router-link>
       </div>
     </div>
+
+
+    <div class="components-group">
+      <div class="components-title">滑动控件组</div>
+
+      <div class="components-links">
+        <router-link to="carousel">ModCarousel</router-link>
+      </div>
+    </div>
   </layout>
 </template>
 
@@ -35,7 +44,7 @@
   @import "~website/assets/mixin"
 
   .components-group
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 15px;
 
     .components-title
@@ -51,5 +60,16 @@
         display: inline-block;
         font-size: 14px;
         margin: 0 10px 10px 0;
+
+  .components-view
+    margin-bottom: 15px;
+    padding: 5px;
+
+    .view-title
+      color: main-color;
+      margin-bottom: 5px;
+
+    .view-actions
+      padding: 5px 0;
 
 </style>
