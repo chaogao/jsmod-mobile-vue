@@ -40,6 +40,10 @@ docute.init({
             title: '操作控件组',
             path: '/zh/functions/'
           },
+          {
+            title: '展示控件组',
+            path: '/zh/views/'
+          },
         ]
       },
 

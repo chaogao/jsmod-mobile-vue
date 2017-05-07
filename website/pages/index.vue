@@ -4,10 +4,22 @@
       <div class="components-title">弹出层组</div>
 
       <div class="components-links">
-        <router-link to="dialog">ModDialog</router-link>
-        <router-link to="alert">ModAlert</router-link>
-        <router-link to="confirm">ModConfirm</router-link>
-        <router-link to="toast">ModToast</router-link>
+        <router-link to="dialog">
+          ModDialog
+          <span class="cn-name">弹窗</span>
+        </router-link>
+        <router-link to="alert">
+          ModAlert
+          <span class="cn-name">提示窗</span>
+        </router-link>
+        <router-link to="confirm">
+          ModConfirm
+          <span class="cn-name">确认窗</span>
+        </router-link>
+        <router-link to="toast">
+          ModToast
+          <span class="cn-name">轻提示</span>
+        </router-link>
       </div>
     </div>
 
@@ -15,7 +27,10 @@
       <div class="components-title">操作控件组</div>
 
       <div class="components-links">
-        <router-link to="button">ModButton</router-link>
+        <router-link to="button">
+          ModButton
+          <span class="cn-name">按钮</span>
+        </router-link>
       </div>
     </div>
 
@@ -23,19 +38,21 @@
       <div class="components-title">展示控件组</div>
 
       <div class="components-links">
-        <router-link to="image">ModImage</router-link>
+        <router-link to="image">
+          ModImage
+          <span class="cn-name">图片</span>
+        </router-link>
+        <router-link to="carousel">
+          ModCarousel
+          <span class="cn-name">滑动轮播</span>
+        </router-link>
+        <router-link to="banner">
+          ModBanner
+          <span class="cn-name">广告展示</span>
+        </router-link>
       </div>
     </div>
 
-
-    <div class="components-group">
-      <div class="components-title">滑动控件组</div>
-
-      <div class="components-links">
-        <router-link to="carousel">ModCarousel</router-link>
-        <router-link to="banner">ModBanner</router-link>
-      </div>
-    </div>
   </layout>
 </template>
 
@@ -80,5 +97,15 @@
 
     .view-actions
       padding: 5px 0;
+
+  .components-links
+    a
+      color: main-color;
+
+    .cn-name
+      display: block;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
 
 </style>

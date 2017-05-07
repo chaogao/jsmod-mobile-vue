@@ -29,29 +29,6 @@
 
   export default {
     props: {
-      auto: {
-        type: Boolean,
-        default: true
-      },
-
-      class: {
-        type: String,
-      },
-
-      ratio: {
-        type: Number
-      },
-
-      width: {
-        type: [String, Number],
-        default: 'auto'
-      },
-
-      height: {
-        type: [String, Number],
-        default: 'auto'
-      },
-
       src: {
         type: String
       },
@@ -64,6 +41,29 @@
         default: 'cover'
       },
 
+      width: {
+        type: [String, Number],
+        default: 'auto'
+      },
+
+      height: {
+        type: [String, Number],
+        default: 'auto'
+      },
+
+      ratio: {
+        type: Number
+      },
+
+      auto: {
+        type: Boolean,
+        default: true
+      },
+
+      class: {
+        type: String,
+      },
+      
       clickReload: {
         type: Boolean,
         default: false
