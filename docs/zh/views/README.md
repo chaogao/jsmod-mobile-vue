@@ -86,6 +86,10 @@ todo...
 
 ### 示例
 
+<p class="tip">
+  PC端无法进行手势滑动，体验手势滑动请在手机端打开原始链接
+</p>
+
 [原始链接](http://mjsmod-vue.tedfe.com/dist/#/carousel)
 
 <iframe width="375" height="667" src="http://mjsmod-vue.tedfe.com/dist/?iframe=1#/carousel"></iframe>
@@ -143,6 +147,10 @@ todo...
 todo...
 
 ### 示例
+
+<p class="tip">
+  PC端无法进行手势滑动，体验手势滑动请在手机端打开原始链接
+</p>
 
 [原始链接](http://mjsmod-vue.tedfe.com/dist/#/banner)
 
