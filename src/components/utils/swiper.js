@@ -15,7 +15,8 @@ class Swiper {
       interval: 3000,
       height: 'auto',
       minMovingDistance: 0,
-      preventScrollY: false
+      preventScrollY: false,
+      enableTouch: true
     }
     this._options = objectAssign(this._default, options)
     this._options.height = this._options.height.replace('px', '')
@@ -38,7 +39,7 @@ class Swiper {
     }
     this._init()
     this._auto()
-    this._bind()
+    this._options.enableTouch && this._bind()
     this._onResize()
     return this
   }

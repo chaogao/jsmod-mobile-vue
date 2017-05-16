@@ -123,7 +123,7 @@
       createSwiper (idx) {
         let self = this;
 
-        this.swiper && this.swiper.destroy()
+        this.swiper && this.swiper.destroy();
         this.swiper = new Swiper({
           container: this.$el,
           direction: this.direction,

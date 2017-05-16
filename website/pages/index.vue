@@ -20,6 +20,10 @@
           ModToast
           <span class="cn-name">轻提示</span>
         </router-link>
+        <router-link to="layer">
+          ModLayer
+          <span class="cn-name">滑出层</span>
+        </router-link>
       </div>
     </div>
 
@@ -30,6 +34,11 @@
         <router-link to="button">
           ModButton
           <span class="cn-name">按钮</span>
+        </router-link>
+
+        <router-link to="tab">
+          ModTab
+          <span class="cn-name">分栏</span>
         </router-link>
       </div>
     </div>
@@ -85,7 +94,7 @@
       a
         display: inline-block;
         font-size: 14px;
-        margin: 0 5px 5px 0;
+        margin: 0 5px 10px 0;
 
   .components-view
     margin-bottom: 15px;

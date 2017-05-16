@@ -14,7 +14,11 @@ import { ModCarousel } from './components/carousel';
 import { ModCarouselItem } from './components/carousel';
 import { ModBanner } from './components/banner';
 
+import { ModLayer } from './components/layer';
+
 import { ModImage } from './components/image';
+
+import { ModTab, ModTabItem } from './components/tab';
 
 
 import './styles/utils.styl';
@@ -30,7 +34,10 @@ const Components = {
   ModCarousel,
   ModCarouselItem,
   ModBanner,
-  ModImage
+  ModLayer,
+  ModImage,
+  ModTab,
+  ModTabItem
 }
 
 const install = (Vue, options) => {

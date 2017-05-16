@@ -232,3 +232,66 @@ this.$jsmod.toast.show({
 [原始链接](http://mjsmod-vue.tedfe.com/dist/#/toast)
 
 <iframe width="375" height="667" src="http://mjsmod-vue.tedfe.com/dist/?iframe=1#/toast"></iframe>
+
+
+
+## ModLayer
+
+### 何时使用
+
+生成页面的滑出层，左侧、右侧滑出菜单，下方、上方滑出提示等场景使用
+
+### components 调用
+
+```
+<mod-layer v-model="show1">
+  <div class="layer-inner">
+    <div class="components-view">
+      <div class="view-title">垂直方向 layer</div>
+      <mod-button v-on:click="show1 = false">关闭</mod-button>
+    </div>
+  </div>
+</mod-layer>
+```
+
+
+### props
+
+| name        | default     |   type      | description |
+| ----------- |-------------|-------------|-------------|
+| value       | false       |    Boolean   |  是否显示滑出层，设置 v-model 时不要设置此值 |
+| useMask     |    true     |    Boolean   |  是否使用黑色透明蒙层 |
+| coverScreen  |   false      |    Boolean   |  滑出层是否占用整个屏幕区域，设置此值时 width(height) 将不再起作用 |
+| isMaskClickHide  |   true       |    Boolean   | 点击蒙层是否关闭滑出层 |
+| useIscroll    |  true    |    Boolean   | 滑出层内部是否使用 iscroll，如果内部有 input 元素设置此值为 false，使用 iscroll 会有键盘弹出 bug  |
+| direction    |   vertical   |    String   | 滑出层的方向，可选值: `vertical` `horizontal`  |
+| verticalPosition    |   bottom   |    String   | 滑出曾在垂直方向时的位置  |
+| horizontalPosition    |   left   |    String   | 滑出曾在水平方向时的位置  |
+
+### slots
+
+| name        | description |
+| ----------- |-------------|
+| default     | 内容区域     |
+
+
+
+### events
+
+| name        |      description |
+| ----------- |------------------ |
+| hide       | 隐藏时触发  |
+
+
+### 示例
+
+[原始链接](http://mjsmod-vue.tedfe.com/dist/#/layer)
+
+<iframe width="375" height="667" src="http://mjsmod-vue.tedfe.com/dist/?iframe=1#/layer"></iframe>
+
+
+### events
+| name        |    description |
+| ----------- |------------------ |
+| onShow       | 显示时触发 |
+| onHide       | 隐藏时触发 |

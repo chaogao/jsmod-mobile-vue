@@ -9,6 +9,8 @@ import Button from '../pages/button'
 import Carousel from '../pages/carousel'
 import Banner from '../pages/carousel/banner'
 import Image from '../pages/image'
+import Layer from '../pages/layer'
+import Tab from '../pages/tab'
 
 import config from '../../config'
 
@@ -68,6 +70,16 @@ let router = new Router({
       path: '/image',
       name: 'image',
       component: Image
+    },
+    {
+      path: '/layer',
+      name: 'layer',
+      component: Layer
+    },
+    {
+      path: '/tab',
+      name: 'tab',
+      component: Tab
     }
   ]
 });
