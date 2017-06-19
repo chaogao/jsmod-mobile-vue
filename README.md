@@ -1,3 +1,5 @@
+## WARNING mobile 版本只在内部测试，请不要使用！！
+
 ## jsmod mobile for vue 中文文档
 
 [使用文档](http://mjsmod-vue.tedfe.com/)
