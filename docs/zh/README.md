@@ -26,6 +26,7 @@ npm install jsmod-mobile-vue --save
 ```javascript
 import Vue from 'vue'
 import JsmodMobileVue from 'jsmod-mobile-vue'
+import 'jsmod-mobile-vue/lib/jsmod.mobile.css'
 
 Vue.use(JsmodMobileVue);
 ```
