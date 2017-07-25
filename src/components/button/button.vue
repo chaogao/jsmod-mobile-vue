@@ -7,9 +7,8 @@
       @click="_onClick"
       >
 
-    <span v-if="status == 'loading'" class="jsmod-button-icon">
-      <i v-bind:class="['iconjsmod', 'iconjsmod-jiazai', 'jsmod-loading']"></i>
-    </span>
+
+    <mod-spin v-if="status == 'loading'" class="jsmod-button-spin"></mod-spin>
 
     <span v-if="status != 'loading'" class="jsmod-button-text"><slot></slot></span>
     <span v-else class="jsmod-button-text-loading"><slot name="loading"></slot></span>
@@ -18,6 +17,8 @@
 
 <script>
   import Vue from 'vue';
+  import { ModSpin } from '../spin';
+
 
   const BUTTON_STATES = [
     'default',
@@ -26,6 +27,10 @@
   ];
 
   export default {
+    components: {
+      ModSpin
+    },
+
     computed: {
       buttonClass () {
         let arr = ['jsmod-button'];
@@ -141,6 +146,9 @@
     color: #fff;
     position: relative;
     overflow: hidden;
+
+    .jsmod-button-spin
+      vertical-align: text-bottom;
 
     .jsmod-button-icon
       vertical-align: middle;

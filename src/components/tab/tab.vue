@@ -4,6 +4,7 @@
       <div :class="['jsmod-tab-card-item', tabClass]"  v-for="item, idx in tabs" v-on:click="currentInner = idx">
         <slot name="tab"
             :label="item.label"
+            :data="item.data"
             :active="idx == currentInner">
           <div :class="{'jsmod-tab-card-item-default': true, 'jsmod-tab-card-item-default-active': idx == currentInner}">
             {{ item.label }}

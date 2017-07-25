@@ -14,6 +14,21 @@
       }
     },
 
+    data () {
+      return {
+        height: 0
+      }
+    },
+
+    updated () {
+      let height = this.$el.offsetHeight;
+
+      if (height != this.height) {
+        this.height = height;
+        this.$parent.updateHeight();
+      }
+    },
+
     mounted () {
       this.$parent.updateTabs(this.$el.offsetHeight);
     }
