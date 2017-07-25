@@ -12,17 +12,18 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    'jsmod-mobile': './src/index.js'
+    'jsmod.mobile': './src/index.js'
   },
 
   module: {
-    rules: (utils.styleLoaders({ sourceMap: config.npm.cssSourceMap })).concat([
+    rules: (utils.styleLoaders({ sourceMap: config.npm.cssSourceMap, extract: true})).concat([
       {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: utils.cssLoaders({
-            sourceMap: config.npm.cssSourceMap
+            sourceMap: config.npm.cssSourceMap,
+            extract: true
           })
         }
       },
@@ -35,7 +36,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 50000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
@@ -43,7 +44,7 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 50000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
@@ -60,6 +61,10 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': config.npm.env
+    }),
+
+    new ExtractTextPlugin({
+      filename: 'jsmod.mobile.css'
     })
   ],
 
