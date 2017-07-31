@@ -1,6 +1,6 @@
 {
   "name": "jsmod-mobile-vue",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "jsmod components for vue",
   "author": "gaochao04@gmail.com",
   "main": "lib/jsmod.mobile.js",

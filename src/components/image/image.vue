@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:style="imageStyle" v-bind:class="['jsmod-image', className]">
+  <div v-bind:style="imageStyle" v-bind:class="['jsmod-image']">
     <div v-if="showLoading && isLoading" class="jsmod-image-loading"
         v-bind:style="[{backgroundImage: 'url(' + loadingUrl + ')'}, loadingStyle]"></div>
 
@@ -60,10 +60,6 @@
         default: true
       },
 
-      class: {
-        type: String,
-      },
-      
       clickReload: {
         type: Boolean,
         default: false
@@ -225,10 +221,6 @@
 
       imgClass () {
         return this.isLoading ? 'jsmod-image-img-loading' : 'jsmod-image-img-loaded';
-      },
-
-      className () {
-        return this.class;
       }
     },
 
