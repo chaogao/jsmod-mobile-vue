@@ -16,6 +16,13 @@
       <mod-confirm title="奸商" btnOk="我土豪" btnNo="坑你妹了？" v-model="show3" v-on:click="onClickBuy" content="买个老司机？$10w"></mod-confirm>
       <mod-button v-on:click="show3 = !show3" >复合例子</mod-button>
 
+      <mod-confirm btnOk="我土豪" btnNo="坑你妹了？" v-model="show4" v-on:click="onClickBuy" content="买个老司机？$10w" :backgroundColor="'#fff'">
+        <div slot="title">
+          自定义title
+        </div>
+      </mod-confirm>
+      <mod-button v-on:click="show4 = !show4" >自定义title</mod-button>
+
     </div>
   </layout>
 </template>
@@ -29,6 +36,7 @@
         show1: false,
         show2: false,
         show3: false,
+        show4: false,
       }
     },
 

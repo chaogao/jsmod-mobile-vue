@@ -2,7 +2,9 @@
   <mod-dialog v-model="canShow" background-color="rgba(0, 0, 0, 0)" :width="width" :isMaskClickHide="false" :useIscroll="useIscroll">
     <div slot="header">
       <div class="jsmod-confirm-title">
-        {{ title }}
+        <slot name="title">
+          <div v-html="title"></div>
+        </slot>
       </div>
     </div>
 
