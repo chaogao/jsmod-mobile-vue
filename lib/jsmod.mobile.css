@@ -6,15 +6,11 @@
   max-height: 90%;
   max-width: 90%;
   overflow: hidden;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-flex-direction: column;
+      flex-direction: column;
+  transform: translate(-50%, -50%);
 }
 .jsmod-dialog-html.jsmod-dialog-html-none-mask {
   position: fixed;
@@ -22,9 +18,8 @@
 .jsmod-dialog-solt-content {
   overflow: hidden;
   position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
 }
 
 .jsmod-alert-title {
@@ -107,14 +102,12 @@
   background: #fff;
   text-align: center;
   border-radius: 0px 0px 10px 10px;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 .jsmod-confirm-footer .jsmod-confirm-footer-btn-item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+      flex: 1;
   padding: 10px 0;
   text-align: center;
   text-decoration: none;
@@ -197,7 +190,6 @@
 }
 .jsmod-image img {
   display: block;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 .jsmod-image .jsmod-image-img-loading {
@@ -227,8 +219,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-size: 14px;
 }
 .jsmod-image-error-inner .jsmod-image-error-inner-content i {
