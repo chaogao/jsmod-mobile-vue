@@ -1,6 +1,6 @@
 {
   "name": "jsmod-mobile-vue",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "jsmod components for vue",
   "author": "gaochao04@gmail.com",
   "main": "lib/jsmod.mobile.js",
@@ -62,6 +62,7 @@
     "vue-style-loader": "^2.0.0",
     "vue-template-compiler": "^2.2.4",
     "vue-touch": "^2.0.0-beta.4",
+    "vue2-touch-events": "^1.0.0",
     "webpack": "^2.2.1",
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
@@ -76,5 +77,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {}
 }

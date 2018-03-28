@@ -1,7 +1,7 @@
 <template>
   <transition v-bind:name="useMask ? 'jsmod-mask' : 'jsmod-mask-none'">
 
-    <v-touch tag="div" v-on:tap="maskHide" v-show="canShow" :class="[
+    <div v-touch:tap="maskHide" v-show="canShow" :class="[
         'jsmod-mask',
         {'jsmod-mask-none': !useMask},
         direction == 'vertical' ? 'jsmod-layer-vertical' : 'jsmod-layer-horizontal',
@@ -15,7 +15,7 @@
         </div>
       </div>
 
-    </v-touch>
+    </div>
 
   </transition>
 </template>
