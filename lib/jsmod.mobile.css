@@ -267,6 +267,7 @@
   bottom: 0;
   right: 0;
   background: rgba(0,0,0,0.6);
+  overflow-y: hidden;
 }
 .jsmod-mask.jsmod-mask-none {
   position: static;

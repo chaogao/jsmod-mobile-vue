@@ -76,6 +76,27 @@
       </div>
     </mod-layer>
 
+    <mod-layer height="50%" v-model="show7" >
+      <div class="layer-inner">
+        <div class="components-view">
+          <mod-button v-on:click="onShowInner">开启内层</mod-button>
+        </div>
+
+
+        <mod-layer :coverScreen="true" v-model="show8" :z-index="2" >
+          <div class="layer-inner">
+            <div class="components-view">
+              <div class="view-title">内层layer</div>
+              <mod-button v-on:click="onShowOuter">关闭</mod-button>
+              <li class="demo-list" v-for="item in list">测试数据：{{ item }}</li>
+            </div>
+          </div>
+        </mod-layer>
+      </div>
+    </mod-layer>
+
+
+
     <div class="components-view">
       <mod-button v-on:click="show1 = true">垂直方向</mod-button>
     </div>
@@ -103,6 +124,10 @@
     <div class="components-view">
       <mod-button v-on:click="show6 = true">水平反向，覆盖全屏</mod-button>
     </div>
+
+    <div class="components-view">
+      <mod-button v-on:click="show7 = true">layer 嵌套</mod-button>
+    </div>
   </layout>
 </template>
 
@@ -118,9 +143,22 @@
         show4: false,
         show5: false,
         show6: false,
+        show7: false,
+        show8: false,
         list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9]
       }
     },
+
+    methods: {
+      onShowInner () {
+        this.show8 = true;
+      },
+
+      onShowOuter () {
+        this.show7 = true;
+        this.show8 = false;
+      }
+    },  
 
     components: {
       Layout

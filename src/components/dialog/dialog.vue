@@ -21,7 +21,7 @@
 
 <script>
   import DialogMixin from '../utils/dialog.mixin';
-  import IScroll from 'iscroll';
+  import IScroll from 'better-scroll';
 
   export default {
     props: {

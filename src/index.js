@@ -20,6 +20,7 @@ import { ModImage } from './components/image';
 
 import { ModTab, ModTabItem } from './components/tab';
 
+import VueTouch from 'vue-touch';
 
 import './styles/utils.styl';
 import './styles/transition.styl';
@@ -46,6 +47,8 @@ const install = (Vue, options) => {
   }
 
   Object.keys(Components).forEach(key => Vue.component(key, Components[key]));
+
+  Vue.use(VueTouch, {name: 'v-touch'});
 
   Vue.prototype.$jsmod = {
     'dialog': Dialog,

@@ -5,13 +5,15 @@ let zIndexOffset = 0;
 
 // 注入弹窗的逻辑
 let InjectTools = {
-  append ($el) {
+  append ($el, zIndex) {
     if (!this.$root) {
       this.createRoot();
     }
 
-    $el.style.zIndex = DIALOG_ZINDEX_BEGIN + zIndexOffset;
+    $el.style.zIndex = DIALOG_ZINDEX_BEGIN + zIndexOffset + (zIndex || 0);
+
     zIndexOffset += 1;
+
     this.$root.appendChild($el);
 
     return $el.style.zIndex;
@@ -47,13 +49,13 @@ export default {
 
   beforeMount () {
     if (this.$el) {
-      this.__jsmod_dialog_zindex = InjectTools.append(this.$el);
+      this.__jsmod_dialog_zindex = InjectTools.append(this.$el, this.zIndex);
     }
   },
 
   mounted () {
     if (this.$el && !this.__jsmod_dialog_zindex) {
-      this.__jsmod_dialog_zindex = InjectTools.append(this.$el);
+      this.__jsmod_dialog_zindex = InjectTools.append(this.$el, this.zIndex);
     }
   },
 

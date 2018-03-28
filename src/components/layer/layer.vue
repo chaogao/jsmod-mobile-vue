@@ -1,25 +1,29 @@
 <template>
   <transition v-bind:name="useMask ? 'jsmod-mask' : 'jsmod-mask-none'">
-    <div @click="maskHide" v-show="canShow" :class="[
+
+    <v-touch tag="div" v-on:tap="maskHide" v-show="canShow" :class="[
         'jsmod-mask',
         {'jsmod-mask-none': !useMask},
         direction == 'vertical' ? 'jsmod-layer-vertical' : 'jsmod-layer-horizontal',
         'jsmod-layer-vertical-' + verticalPosition,
         'jsmod-layer-horizontal-' + horizontalPosition
       ]">
+
       <div ref="slotContent" :style="layerStyle" :class="['jsmod-layer-content']">
         <div ref="slotInner">
           <slot></slot>
         </div>
       </div>
-    </div>
+
+    </v-touch>
+
   </transition>
 </template>
 
 <script>
   import DialogMixin from '../utils/dialog.mixin';
   import ShowMixin from '../utils/show.mixin';
-  import IScroll from 'iscroll';
+  import IScroll from 'better-scroll';
 
   export default {
     props: {
@@ -56,6 +60,11 @@
       horizontalPosition: {
         type: String,
         default: 'left'
+      },
+
+      zIndex: {
+        type: Number,
+        default: 0
       }
     },
 
