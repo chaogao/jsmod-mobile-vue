@@ -47,12 +47,6 @@ export default {
     }
   },
 
-  beforeMount () {
-    if (this.$el) {
-      this.__jsmod_dialog_zindex = InjectTools.append(this.$el, this.zIndex);
-    }
-  },
-
   mounted () {
     if (this.$el && !this.__jsmod_dialog_zindex) {
       this.__jsmod_dialog_zindex = InjectTools.append(this.$el, this.zIndex);
