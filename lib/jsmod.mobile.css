@@ -191,9 +191,13 @@
 .jsmod-image img {
   display: block;
   transition: opacity 0.3s;
+  max-width: none;
+  max-height: none;
 }
 .jsmod-image .jsmod-image-img-loading {
   opacity: 0;
+  width: 100%;
+  height: 100%;
 }
 .jsmod-image .jsmod-image-img-loaded {
   opacity: 1;

@@ -1,6 +1,6 @@
 {
   "name": "jsmod-mobile-vue",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "jsmod components for vue",
   "author": "gaochao04@gmail.com",
   "main": "lib/jsmod.mobile.js",
@@ -26,6 +26,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "better-scroll": "^1.9.1",
+    "blazy": "^1.8.2",
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
