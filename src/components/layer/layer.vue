@@ -70,8 +70,8 @@
 
     data () {
       return {
-        winWidth: window.innerWidth,
-        winHeight: window.innerHeight
+        winWidth: 0,
+        winHeight: 0
       }
     },
 
@@ -81,6 +81,9 @@
 
     mounted () {
       this.canShow && this.calcLayout();
+
+      this.winWidth = window.innerWidth;
+      this.winHeight = window.innerHeight;
 
       this.onEvents();
     },

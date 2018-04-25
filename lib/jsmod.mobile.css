@@ -274,7 +274,6 @@
   overflow-y: hidden;
 }
 .jsmod-mask.jsmod-mask-none {
-  position: static;
   width: 0;
   height: 0;
 }
